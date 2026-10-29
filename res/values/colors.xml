@@ -15,12 +15,15 @@
     limitations under the License.
 -->
 <resources>
+    <color name="amoled_black">#000000</color>
+
+    <!-- Kept as the accent color; still readable on pure black -->
     <color name="primary_color">#689F38</color>
 
     <!--  Action bar -->
     <color name="action_bar_title_text_color">#ffffff</color>
-    <color name="action_bar_background_color">@color/primary_color</color>
-    <color name="action_bar_background_color_dark">#537F2D</color>
+    <color name="action_bar_background_color">@color/amoled_black</color>
+    <color name="action_bar_background_color_dark">@color/amoled_black</color>
 
     <!-- Conversation list -->
     <color name="conversation_list_error">#F05A24</color>
@@ -39,11 +42,11 @@
 
     <color name="text_highlight_color">#80689F38</color>
 
-    <color name="widget_text_color">#424242</color>
+    <color name="widget_text_color">#E0E0E0</color>
     <color name="widget_incoming_text_color">@android:color/white</color>
     <color name="widget_outgoing_text_color">#424242</color>
-    <color name="widget_background_color">#ffffff</color>
-    <color name="ripple_material_light">#40000000</color>
+    <color name="widget_background_color">@color/amoled_black</color>
+    <color name="ripple_material_light">#40ffffff</color>
     <color name="widget_conversation_title_color">#FFFFFF</color>
 
 </resources>
