@@ -18,14 +18,28 @@
     <!--
         Base application theme, dependent on API level. This theme is replaced
         by BugleBaseTheme from res/values-vXX/styles.xml on newer devices.
+        AMOLED: now a dark parent with pure black surfaces.
     -->
-    <style name="BugleBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:forceDarkAllowed">true</item>
+    <style name="BugleBaseTheme" parent="Theme.AppCompat">
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowBackground">@color/amoled_black</item>
+        <item name="android:colorBackground">@color/amoled_black</item>
+        <item name="colorBackgroundFloating">@color/amoled_black</item>
+        <item name="android:statusBarColor">@color/amoled_black</item>
+        <item name="android:navigationBarColor">@color/amoled_black</item>
     </style>
 
-    <style name="Theme.Compose" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.Compose" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/amoled_black</item>
+        <item name="android:colorBackground">@color/amoled_black</item>
+        <item name="android:statusBarColor">@color/amoled_black</item>
+        <item name="android:navigationBarColor">@color/amoled_black</item>
+    </style>
 
-    <style name="Theme.License" parent="Theme.AppCompat.DayNight.NoActionBar" />
+    <style name="Theme.License" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/amoled_black</item>
+        <item name="android:colorBackground">@color/amoled_black</item>
+    </style>
 
     <!-- Application theme. -->
     <style name="BugleTheme" parent="BugleBaseTheme">
@@ -33,14 +47,15 @@
          <item name="android:dropDownListViewStyle">@style/DropDownListViewStyle</item>
          <item name="colorPrimary">@color/action_bar_background_color</item>
          <item name="colorPrimaryDark">@color/action_bar_background_color_dark</item>
-         <item name="colorAccent">@color/action_bar_background_color</item>
+         <!-- Accent must stay visible on black, so it uses the green instead of the (now black) action bar color -->
+         <item name="colorAccent">@color/primary_color</item>
          <item name="android:textColorHighlight">@color/text_highlight_color</item>
          <item name="actionBarStyle">@style/BugleActionBar</item>
     </style>
 
-    <style name="BugleTheme.DialogActivity" parent="@style/Theme.AppCompat.Light.Dialog">
+    <style name="BugleTheme.DialogActivity" parent="@style/Theme.AppCompat.Dialog">
         <item name="android:windowNoTitle">false</item>
-        <item name="android:background">@android:color/white</item>
+        <item name="android:background">@color/amoled_black</item>
     </style>
 
     <!-- Class 0 is a Compose dialog hosted by a dialog-themed Activity.
@@ -60,10 +75,11 @@
         <item name="android:windowNoDisplay">true</item>
     </style>
 
-    <style name="BugleActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+    <style name="BugleActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
         <item name="height">@dimen/action_bar_height</item>
         <item name="displayOptions">showTitle</item>
         <item name="titleTextStyle">@style/BugleActionBarTitleTextStyle</item>
+        <item name="background">@color/amoled_black</item>
     </style>
 
     <style name="BugleActionBarTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
